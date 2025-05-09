@@ -1,0 +1,12 @@
+{
+  "port": 3000,
+  "database": {
+    "url": "mongodb://localhost:27017/newsnexus",
+    "options": {
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true
+    }
+  },
+  "jwtSecret": "your_jwt_secret_key",
+  "logLevel": "info"
+}

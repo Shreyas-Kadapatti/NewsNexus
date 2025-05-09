@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NewsNexus - Real-Time News</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-bg: #f5f7fa;
+      --primary-color: #1e293b;
+      --accent-color: #38bdf8;
+      --nav-bg: #334155;
+      --text-dark: #333;
+      --text-light: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--primary-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      padding: 1.5rem 0;
+      color: white;
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      background: var(--nav-bg);
+      padding: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      padding: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+      transition: transform 0.25s ease-in-out;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-body h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      line-height: 1.4;
+      color: var(--primary-color);
+    }
+
+    .card-body p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .card-footer {
+      padding: 0.75rem 1.25rem;
+      background: #f0f0f0;
+      border-top: 1px solid #ddd;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: #cbd5e1;
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* Scroll to Top Button */
+    #topBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1000;
+      transition: background 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #0ea5e9;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        gap: 0.5rem;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>NewsNexus</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Trending</a>
+  <a href="#">World</a>
+  <a href="#">Technology</a>
+  <a href="#">Sports</a>
+  <a href="#">Business</a>
+  <a href="#">Health</a>
+  <a href="#">Science</a>
+  <a href="#">Entertainment</a>
+</nav>
+
+<main class="container">
+  <!-- Sample Cards Below (Truncated for brevity, reuse your existing card structure here) -->
+  <div class="card">
+    <img src="https://marketplace.canva.com/EAGD3XkUBK0/1/0/1600w/canva-red-and-white-general-news-breaking-news-video-8HCnEsJgmXA.jpg" alt="Breaking News">
+    <div class="card-body">
+      <h3>Breaking: Global Diplomatic Talks Commence</h3>
+      <p>High-stakes negotiations begin as world leaders convene to address pressing international issues.</p>
+    </div>
+    <div class="card-footer">Published 5 minutes ago</div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDI4fHx0ZWNobm9sb2d5fGVufDB8fHx8MTY5MDcxMTIxOA&ixlib=rb-4.0.3&q=80&w=600" alt="Technology News">
+    <div class="card-body">
+      <h3>Tech: Quantum Computing Breakthrough Announced</h3>
+      <p>Scientists achieve a significant milestone in quantum computing, paving the way for revolutionary advancements.</p>
+    </div>
+    <div class="card-footer">Updated 15 minutes ago</div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1521790945508-bf2a36314e85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDU4fHxidXNpbmVzc3xlbnwwfHx8fDE2OTA3MTEyNDA&ixlib=rb-4.0.3&q=80&w=600" alt="Business News">
+    <div class="card-body">
+      <h3>Markets: Tech Stocks Lead Bull Run</h3>
+      <p>Soaring valuations in the technology sector propel major stock indices to new record highs.</p>
+    </div>
+    <div class="card-footer">Posted 30 minutes ago</div>
+  </div>
+
+  <div class="card">
+    <img src="https://media.istockphoto.com/id/114120315/video/sports-news-broadcast-graphics-title.jpg?s=640x640&k=20&c=oOlUXmlkyEzqaKGX7FIW3q3uQf0GAlES-wuM3hibnwY=" alt="Sports News">
+    <div class="card-body">
+      <h3>Sports: Local Team Secures Championship Title</h3>
+      <p>In a thrilling final, the city's own team clinches the championship, sparking celebrations across the region.</p>
+    </div>
+    <div class="card-footer">Live Updates</div>
+  </div>
+
+  <div class="card">
+    <img src="https://media.istockphoto.com/id/1437830105/photo/cropped-shot-of-a-female-nurse-hold-her-senior-patients-hand-giving-support-doctor-helping.jpg?s=612x612&w=0&k=20&c=oKR-00at4oXr4tY5IxzqsswaLaaPsPRkdw2MJbYHWgA=" alt="Health News">
+    <div class="card-body">
+      <h3>Health: New Study Shows Promising Cancer Treatment</h3>
+      <p>Research reveals a novel therapy with significant potential in treating a specific type of cancer.</p>
+    </div>
+    <div class="card-footer">Published 1 hour ago</div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.oecd.org/adobe/dynamicmedia/deliver/dm-aid--81da1bba-5e45-46df-9741-33c6113a84d1/a8d820bd-en.jpg?preferwebp=true&quality=80" alt="Science News">
+    <div class="card-body">
+      <h3>Science: Evidence of Ancient Life Discovered</h3>
+      <p>Scientists uncover compelling evidence suggesting the existence of life on another celestial body.</p>
+    </div>
+    <div class="card-footer">Breaking Discovery</div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHxlbnRlcnRhaW5tZW50fGVufDB8fHx8MTY5MTM2ODQxOXww&ixlib=rb-4.0.3&q=80&w=600" alt="Entertainment News">
+    <div class="card-body">
+      <h3>Entertainment: Highly Anticipated Film Premieres Tonight</h3>
+      <p>The red carpet is rolled out for the debut of a major motion picture expected to be a blockbuster.</p>
+    </div>
+    <div class="card-footer">Just Released</div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.aspistrategist.org.au/wp-content/uploads/2023/11/GettyImages-467714941.jpg" alt="World News">
+    <div class="card-body">
+      <h3>World: Historic Agreement Signed Between Nations</h3>
+      <p>After months of negotiations, two countries reach a landmark agreement on trade and cooperation.</p>
+    </div>
+    <div class="card-footer">Published 2 hours ago</div>
+  </div>
+  <div class="card">
+    <img src="https://marketplace.canva.com/EAGD3XkUBK0/1/0/1600w/canva-red-and-white-general-news-breaking-news-video-8HCnEsJgmXA.jpg" alt="Breaking News">
+    <div class="card-body">
+      <h3>Breaking: Global Diplomatic Talks Commence</h3>
+      <p>High-stakes negotiations begin as world leaders convene to address pressing international issues.</p>
+    </div>
+    <div class="card-footer">Published 5 minutes ago</div>
+  </div>
+  <!-- Add your other cards here in the same format -->
+</main>
+
+<footer>
+  © 2025 NewsNexus | All Rights Reserved
+</footer>
+
+<!-- Scroll to Top Button -->
+<button id="topBtn" onclick="scrollToTop()">↑</button>
+
+<script>
+  // Show the button on scroll
+  const topBtn = document.getElementById("topBtn");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
